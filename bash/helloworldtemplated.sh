@@ -1,5 +1,5 @@
 #!/bin/bash
-# My second script - helloworldtemplated.sh
+# My second scrip - helloworldtemplated.sh
 
 cat <<EOF
 Hello World!
