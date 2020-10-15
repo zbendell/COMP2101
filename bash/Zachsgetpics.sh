@@ -23,6 +23,7 @@ mkdir -p ~/public_html/pics || (echo "Failed to make a new pics directory" && ex
 wget -q -O ~/public_html/pics/pics.zip http://zonzorp.net/pics.zip && unzip -d ~/public_html/pics -o -q ~/public_html/pics/pics.zip && rm ~/public_html/pics/pics.zip
 
 #Zach's additions to the code start here.
+#Task 1:
 wget -q -O ~/public_html/pics/pics.tgz http://zonzorp.net/pics.tgz && tar -C ~/public_html/pics -xf ~/public_html/pics/pics.tgz && rm ~/public_html/pics/pics.tgz
 
 # Task 1: Improve this script to also retrieve and install the files kept in the https://zonzorp.net/pics.tgz tarfile
