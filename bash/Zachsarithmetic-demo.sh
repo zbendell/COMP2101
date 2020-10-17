@@ -26,3 +26,17 @@ echo "@====================================================@"
 echo " The Following Output Is The New Code Written By Zach"
 
 echo "@====================================================@"
+firstnum=a
+secondnum=b
+thirdnum=c
+
+read -p "Please enter a number: " $firstnum
+read -p "Please enter a second number: " $secondnum
+read -p "Please enter a third number: " $thirdnum
+echo ""
+
+sum=$(( firstnum + secondnum + thirdnum ))
+product=$(( firstnum * secondnum * thirdnum ))
+echo "The sum of your numbers are: $sum"
+echo "The product of your number are: $product"
+echo ""
