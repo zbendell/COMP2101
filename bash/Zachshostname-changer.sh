@@ -30,20 +30,24 @@ hName=$(hostname)
 echo "The hostname is: $hName"
 
 #Asks the user for their student number and stores it as stuNum
-
 read -p 'Please enter in your student number: ' stuNum
 
 #Outputs the desired HostName
 echo "The desired hostname is pc$stuNum"
+
 #Sets dHostName to the desired host name
 dHostName="pc$stuNum"
 
-
+#if the hostname does not equal the desired hostname the following executes
 if [ $hName != $dHostName ]; then
+  #replaces the original hostname with the desired hostname
   sed -i "s/$hName/$dHostName/" /etc/hosts
+  #sets the hostname to desired hostname
   hostnamectl set-hostname $dHostName
+  #outputs the changes to the user
   echo "The hostname has been changed the the desired hostname: $dHostName"
   echo "Please restart your computer to apply the changes"
+#If the names are the same then the if statement exits and no changes happen
 elif [ $hName = $dHostName ]; then
 
   exit
