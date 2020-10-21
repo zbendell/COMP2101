@@ -22,6 +22,30 @@
 #e.g. hostnamectl set-hostname $newname
 
 #Zachs Script Starts here
-hname=a
-cat /proc/sys/kernel/hostname | $hname
-echo "$hname"
+
+#Captures the output of the hostname command and sets it to hName variable
+hName=$(hostname)
+
+#Outputs the  hostname
+echo "The hostname is: $hName"
+
+#Asks the user for their student number and stores it as stuNum
+
+read -p 'Please enter in your student number: ' stuNum
+
+#Outputs the desired HostName
+echo "The desired hostname is pc$stuNum"
+#Sets dHostName to the desired host name
+dHostName="pc$stuNum"
+
+
+if [ $hName != $dHostName ]; then
+  sed -i "s/$hName/$dHostName/" /etc/hosts
+  hostnamectl set-hostname $dHostName
+  echo "The hostname has been changed the the desired hostname: $dHostName"
+  echo "Please restart your computer to apply the changes"
+elif [ $hName = $dHostName ]; then
+
+  exit
+
+fi
