@@ -39,6 +39,7 @@ hName=$(hostname)
 
 
 tDay=$(date +"%A")
+
 cTime=$(date +"%r")
 
 #if statements to determine the title
@@ -58,13 +59,7 @@ elif [ $tDay = "Sunday" ]; then
   dTitle="Is Sleepy"
 fi
 
-#below I mad some small changes to the output but everything is still there
-cat <<EOF
+#below I made some small changes to the output but everything is still there
+wScreen=$(echo -e "Welcome to $hName \nwhere $mName's $dTitle \nToday is $tDay, and it's $cTime")
 
-Welcome to $hName, where $mName's $dTitle.
-
-Today is $tDay, and it's $cTime.
-
-
-
-EOF
+echo "$wScreen" | cowsay -n
